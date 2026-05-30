@@ -12,17 +12,14 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
     devDependencies:
-      '@types/npm':
-        specifier: ^7.19.3
-        version: 7.19.3
+      '@types/node':
+        specifier: ^25.9.1
+        version: 25.9.1
 
 packages:
 
   '@types/node@25.9.1':
     resolution: {integrity: sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==}
-
-  '@types/npm@7.19.3':
-    resolution: {integrity: sha512-1fiJlMN0iDs42kFJZJX88SVUppp5zNQik0JVnI3mw28+vssBAz3TAvmhrPpupj1rBESV6bGYjEny30fu4Kst9g==}
 
   degit@3.3.2:
     resolution: {integrity: sha512-rzktlX74xtTbsH64Iy2rktaCzUejyV70K3DIQ1/GtEHS+8sBaFKEzdEfnDDRy076r9gWGcxsMwOzhYnkWKq1tA==}
@@ -37,10 +34,6 @@ snapshots:
   '@types/node@25.9.1':
     dependencies:
       undici-types: 7.24.6
-
-  '@types/npm@7.19.3':
-    dependencies:
-      '@types/node': 25.9.1
 
   degit@3.3.2: {}
 

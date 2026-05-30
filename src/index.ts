@@ -50,29 +50,33 @@ async function main() {
             console.error(`Folder ${ProjectName} allready exists!`);
             process.exit(1);
         }
-
-        console.log(`\nCreating ${ProjectName} in directory ${TargetPath}`);
-        
-        
-        // Clone the template using degit
-        const emitter = degit('IgosProjects/rivet-template', {
-            cache: false,
-            force: true
-        });
-
-        await emitter.clone(TargetPath); // Clone into the directory
-        fs.rmSync(path.join(TargetPath, '.git'), { recursive: true, force: true }); // Remove .git folder
-    
-        console.log("\nCreated project!\n");
-        console.log("Next steps:");
-
-        // If its not the current directory, show the CD command
-        if (ProjectName !== '.') {
-            console.log(`  cd ${ProjectName}`);
-        }
-
-        console.log("   pnpm install");
-        console.log("   pnpm run");
-        console.log("   Then visit localhost:8080")
     }
+    
+    console.log(`\nCreating ${ProjectName} in directory ${TargetPath}`);
+        
+        
+    // Clone the template using degit
+    const emitter = degit('IgosProjects/rivet-template', {
+        cache: false,
+        force: true
+    });
+
+    await emitter.clone(TargetPath); // Clone into the directory
+    fs.rmSync(path.join(TargetPath, '.git'), { recursive: true, force: true }); // Remove .git folder
+    
+    console.log("\nCreated project!\n");
+    console.log("Next steps:");
+
+    // If its not the current directory, show the CD command
+    if (ProjectName !== '.') {
+        console.log(`  cd ${ProjectName}`);
+    }
+
+    console.log("   pnpm install");
+    console.log("   pnpm run");
+    console.log("   Then visit localhost:8080")
+
+    rl.close();
 }
+
+main().catch(console.error);
